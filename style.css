@@ -204,6 +204,15 @@ body {
 }
 
 /* ── MENU ── */
+.menu-category {
+  font-size: 18px;
+  font-weight: 600;
+  color: #b05a2e;
+  margin: 36px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1.5px solid #f0d4c0;
+}
+
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));

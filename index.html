@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paws & Coffee — Pet Café</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="nav-logo">🐾 Paws & Coffee</div>
+    <div class="nav-links">
+      <a href="#menu">Menu</a>
+      <a href="#pets">Our Pets</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#booking">Visit Us</a>
+    </div>
+    <button class="nav-cta" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book a table</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-paws" aria-hidden="true">
+      <span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span>
+      <span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span>
+      <span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span>
+    </div>
+    <h1>Sip, relax &<br><span>cuddle a friend</span></h1>
+    <p>Morocco's coziest pet café — enjoy freshly brewed drinks surrounded by our adorable furry family.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Reserve your spot</button>
+      <button class="btn-secondary" onclick="document.getElementById('pets').scrollIntoView({behavior:'smooth'})">Meet the pets</button>
+    </div>
+  </section>
+
+  <!-- PETS STRIP -->
+  <section id="pets" class="pets-strip">
+    <div class="pet-card">
+      <div class="pet-emoji">🐱</div>
+      <div class="pet-name">Cats</div>
+      <div class="pet-count">8 residents</div>
+    </div>
+    <div class="pet-card">
+      <div class="pet-emoji">🐰</div>
+      <div class="pet-name">Rabbits</div>
+      <div class="pet-count">4 residents</div>
+    </div>
+    <div class="pet-card">
+      <div class="pet-emoji">🦜</div>
+      <div class="pet-name">Birds</div>
+      <div class="pet-count">3 residents</div>
+    </div>
+    <div class="pet-card">
+      <div class="pet-emoji">🐹</div>
+      <div class="pet-name">Hamsters</div>
+      <div class="pet-count">6 residents</div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu" class="section">
+    <div class="section-title">Our menu</div>
+    <div class="section-sub">All drinks come with a free cuddle session</div>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-icon">☕</div>
+        <div class="menu-item-name">Kitty Latte</div>
+        <div class="menu-item-desc">Creamy latte with a foam paw print on top.</div>
+        <div class="menu-item-price">35 MAD</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-icon">🍵</div>
+        <div class="menu-item-name">Bunny Matcha</div>
+        <div class="menu-item-desc">Smooth matcha latte with oat milk.</div>
+        <div class="menu-item-price">38 MAD</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-icon">🍰</div>
+        <div class="menu-item-name">Paw Print Cake</div>
+        <div class="menu-item-desc">Vanilla slice with a cute paw decoration.</div>
+        <div class="menu-item-price">45 MAD</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-icon">🧁</div>
+        <div class="menu-item-name">Fluffy Muffin</div>
+        <div class="menu-item-desc">Blueberry muffin, soft & freshly baked.</div>
+        <div class="menu-item-price">25 MAD</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <div class="why-bg">
+    <section class="section">
+      <div class="section-title">Why visit us?</div>
+      <div class="section-sub">More than just a café</div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">🐾</div>
+          <div class="why-title">Stress relief</div>
+          <div class="why-text">Spending time with animals is proven to lower stress and boost your mood.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">☕</div>
+          <div class="why-title">Quality drinks</div>
+          <div class="why-text">Specialty coffee, teas & pastries — all freshly made every morning.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🌿</div>
+          <div class="why-title">Cozy atmosphere</div>
+          <div class="why-text">Warm lighting, soft cushions, and the gentle sound of purring.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">❤️</div>
+          <div class="why-title">Animal welfare</div>
+          <div class="why-text">All our pets are rescued and cared for by our full-time team.</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="gallery">
+    <h2>Meet our residents</h2>
+    <p>Every visit is a new adventure</p>
+    <div class="gallery-grid">
+      <div class="gallery-box gb1">🐱</div>
+      <div class="gallery-box gb2">🐰</div>
+      <div class="gallery-box gb3">🐱</div>
+      <div class="gallery-box gb4">🦜</div>
+      <div class="gallery-box gb5">🐹</div>
+      <div class="gallery-box gb6">🐱</div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="booking" class="booking">
+    <h2>Reserve your table</h2>
+    <p>Sessions are 1 hour — book in advance to secure your spot</p>
+    <div class="booking-form">
+      <input type="text" placeholder="Your name" />
+      <input type="tel" placeholder="Phone number" />
+      <input type="date" />
+      <select>
+        <option>10:00 AM</option>
+        <option>11:30 AM</option>
+        <option>1:00 PM</option>
+        <option>3:00 PM</option>
+        <option>5:00 PM</option>
+      </select>
+      <select>
+        <option>1 person</option>
+        <option>2 people</option>
+        <option>3 people</option>
+        <option>4+ people</option>
+      </select>
+      <button class="booking-submit" onclick="alert('Reservation confirmed! See you soon 🐾')">Confirm reservation</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-logo">🐾 Paws & Coffee</div>
+    <div class="footer-links">
+      <a href="#menu">Menu</a>
+      <a href="#pets">Our pets</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#booking">Contact</a>
+    </div>
+    <p>Casablanca, Morocco · Open daily 9:00 AM – 8:00 PM</p>
+  </footer>
+
+</body>
+</html>

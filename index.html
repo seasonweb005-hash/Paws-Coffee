@@ -5,19 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Paws & Coffee — Pet Café</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <!-- NAVBAR -->
   <nav class="nav">
     <div class="nav-logo">🐾 Paws & Coffee</div>
-    <div class="nav-links">
+    <div class="nav-links" id="navLinks">
       <a href="#menu">Menu</a>
       <a href="#pets">Our Pets</a>
       <a href="#gallery">Gallery</a>
       <a href="#booking">Visit Us</a>
     </div>
-    <button class="nav-cta" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book a table</button>
+    <div class="nav-right">
+      <button class="nav-cta" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book a table</button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
   <!-- HERO -->
@@ -28,7 +35,7 @@
       <span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span>
     </div>
     <h1>Sip, relax &<br><span>cuddle a friend</span></h1>
-    <p>Morocco's coziest pet café — enjoy freshly brewed drinks surrounded by our adorable cats and dogs.</p>
+    <p>Morocco's coziest pet café — enjoy freshly brewed drinks surrounded by our adorable cats, dogs, and bunnies.</p>
     <div class="hero-btns">
       <button class="btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Reserve your spot</button>
       <button class="btn-secondary" onclick="document.getElementById('pets').scrollIntoView({behavior:'smooth'})">Meet the pets</button>
@@ -57,6 +64,11 @@
       <div class="pet-name">Puppies</div>
       <div class="pet-count">3 residents</div>
     </div>
+    <div class="pet-card featured-pet">
+      <div class="pet-emoji">🐰</div>
+      <div class="pet-name">Bunnies</div>
+      <div class="pet-count">5 residents</div>
+    </div>
   </section>
 
   <!-- MENU -->
@@ -66,108 +78,139 @@
 
     <div class="menu-category">☕ Hot Drinks</div>
     <div class="menu-grid">
+
       <div class="menu-item">
         <div class="menu-item-icon">☕</div>
         <div class="menu-item-name">Kitty Latte</div>
         <div class="menu-item-desc">Creamy latte with a foam paw print on top.</div>
         <div class="menu-item-price">35 MAD</div>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-icon">🍵</div>
         <div class="menu-item-name">Purr-fect Matcha</div>
         <div class="menu-item-desc">Smooth matcha latte with oat milk.</div>
         <div class="menu-item-price">38 MAD</div>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-icon">☕</div>
         <div class="menu-item-name">Puppy Cappuccino</div>
         <div class="menu-item-desc">Classic cappuccino with extra thick foam.</div>
         <div class="menu-item-price">32 MAD</div>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-icon">🫖</div>
-        <div class="menu-item-name">Cozy Chai</div>
-        <div class="menu-item-desc">Spiced chai tea with warm steamed milk.</div>
+        <div class="menu-item-name">Bunny Blossom Tea</div>
+        <div class="menu-item-desc">Delicate chamomile & rose blossom blend, naturally sweet.</div>
         <div class="menu-item-price">30 MAD</div>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-icon">🍫</div>
         <div class="menu-item-name">Woof Hot Choco</div>
         <div class="menu-item-desc">Rich dark chocolate with whipped cream.</div>
         <div class="menu-item-price">36 MAD</div>
       </div>
+
     </div>
 
     <div class="menu-category">🧊 Cold Drinks</div>
     <div class="menu-grid">
+
       <div class="menu-item">
         <div class="menu-item-icon">🧋</div>
         <div class="menu-item-name">Paw Print Bubble Tea</div>
         <div class="menu-item-desc">Taro or brown sugar bubble tea with tapioca pearls.</div>
         <div class="menu-item-price">42 MAD</div>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-icon">🥛</div>
         <div class="menu-item-name">Iced Kitty Latte</div>
         <div class="menu-item-desc">Cold latte over ice with a splash of vanilla.</div>
         <div class="menu-item-price">37 MAD</div>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-icon">🍓</div>
         <div class="menu-item-name">Berry Puppy Shake</div>
         <div class="menu-item-desc">Mixed berry smoothie with yogurt and honey.</div>
         <div class="menu-item-price">40 MAD</div>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-icon">🍋</div>
         <div class="menu-item-name">Minty Lemonade</div>
         <div class="menu-item-desc">Fresh lemonade with mint and a hint of ginger.</div>
         <div class="menu-item-price">28 MAD</div>
       </div>
+
+      <div class="menu-item">
+        <div class="menu-item-icon">🌸</div>
+        <div class="menu-item-name">Bunny Hibiscus Cooler</div>
+        <div class="menu-item-desc">Iced hibiscus tea with lychee syrup — refreshing & floral.</div>
+        <div class="menu-item-price">34 MAD</div>
+      </div>
+
     </div>
 
     <div class="menu-category">🍰 Food & Snacks</div>
     <div class="menu-grid">
+
       <div class="menu-item">
         <div class="menu-item-icon">🍰</div>
         <div class="menu-item-name">Paw Print Cake</div>
         <div class="menu-item-desc">Vanilla slice with a cute paw decoration.</div>
         <div class="menu-item-price">45 MAD</div>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-icon">🧁</div>
         <div class="menu-item-name">Fluffy Muffin</div>
         <div class="menu-item-desc">Blueberry muffin, soft & freshly baked.</div>
         <div class="menu-item-price">25 MAD</div>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-icon">🥐</div>
         <div class="menu-item-name">Butter Croissant</div>
         <div class="menu-item-desc">Flaky French-style croissant, warm from the oven.</div>
         <div class="menu-item-price">22 MAD</div>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-icon">🍪</div>
         <div class="menu-item-name">Cat & Dog Cookies</div>
         <div class="menu-item-desc">Shortbread cookies shaped like cats and dogs.</div>
         <div class="menu-item-price">18 MAD</div>
       </div>
+
+      <div class="menu-item">
+        <div class="menu-item-icon">🐰</div>
+        <div class="menu-item-name">Bunny Carrot Cake</div>
+        <div class="menu-item-desc">Moist carrot cake with cream cheese frosting & bunny ears.</div>
+        <div class="menu-item-price">48 MAD</div>
+      </div>
+
       <div class="menu-item">
         <div class="menu-item-icon">🥪</div>
         <div class="menu-item-name">Croque Monsieur</div>
         <div class="menu-item-desc">Toasted ham & cheese sandwich, café style.</div>
         <div class="menu-item-price">48 MAD</div>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-icon">🍮</div>
         <div class="menu-item-name">Crème Brûlée</div>
         <div class="menu-item-desc">Classic French custard with a caramelized top.</div>
         <div class="menu-item-price">50 MAD</div>
       </div>
+
     </div>
   </section>
-
-  <!-- WHY US -->
+   <!-- WHY US -->
   <div class="why-bg">
     <section class="section">
       <div class="section-title">Why visit us?</div>
@@ -193,21 +236,73 @@
           <div class="why-title">Animal welfare</div>
           <div class="why-text">All our pets are rescued and cared for by our full-time team.</div>
         </div>
+        <div class="why-card">
+          <div class="why-icon">🐰</div>
+          <div class="why-title">Meet our bunnies</div>
+          <div class="why-text">Our newest residents are gentle, fluffy, and love being pet — perfect for all ages.</div>
+        </div>
       </div>
     </section>
   </div>
 
-  <!-- GALLERY -->
   <section id="gallery" class="gallery">
     <h2>Meet our residents</h2>
     <p>Every visit is a new adventure</p>
     <div class="gallery-grid">
-      <div class="gallery-box gb1">🐱</div>
-      <div class="gallery-box gb2">🐶</div>
-      <div class="gallery-box gb3">🐈</div>
-      <div class="gallery-box gb4">🐕</div>
-      <div class="gallery-box gb5">🐱</div>
-      <div class="gallery-box gb6">🐶</div>
+      <div class="gallery-item">
+        <div class="gallery-box gb1">
+          <img src="cat1.jpg" alt="Cat" />
+        </div>
+        <div class="gallery-name">Mochi</div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-box gb2">
+          <img src="dog1.jpg" alt="Dog" />
+        </div>
+        <div class="gallery-name">Biscuit</div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-box gb3">
+          <img src="rabbit1.jpg" alt="Cat" />
+        </div>
+        <div class="gallery-name">Luna</div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-box gb4">
+          <img src="cat2.jpg" alt="Dog" />
+        </div>
+        <div class="gallery-name">Caramel</div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-box gb5">
+          <img src="dog2.jpg" alt="Cat" />
+        </div>
+        <div class="gallery-name">Noisette</div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-box gb6">
+          <img src="rabbit2.jpg" alt="Dog" />
+        </div>
+        <div class="gallery-name">Cookie</div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-box gb7">
+          <img src="cat3.jpg" alt="Rabbit" />
+        </div>
+        <div class="gallery-name">Coco <span class="new-tag">New</span></div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-box gb8">
+          <img src="dog3.jpg" alt="Rabbit" />
+        </div>
+        <div class="gallery-name">Marshmallow <span class="new-tag">New</span></div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-box gb9">
+          <img src="rabbit3.jpg" alt="Rabbit" />
+        </div>
+        <div class="gallery-name">Hazel <span class="new-tag">New</span></div>
+      </div>
     </div>
   </section>
 
@@ -216,23 +311,35 @@
     <h2>Reserve your table</h2>
     <p>Sessions are 1 hour — book in advance to secure your spot</p>
     <div class="booking-form">
-      <input type="text" placeholder="Your name" />
-      <input type="tel" placeholder="Phone number" />
-      <input type="date" />
-      <select>
+      <input type="text" id="bName" placeholder="Your name" />
+      <input type="email" id="bEmail" placeholder="Email address" />
+      <input type="tel" id="bPhone" placeholder="Phone number" />
+      <input type="date" id="bDate" />
+      <select id="bTime">
+        <option value="">Select a time</option>
         <option>10:00 AM</option>
         <option>11:30 AM</option>
         <option>1:00 PM</option>
         <option>3:00 PM</option>
         <option>5:00 PM</option>
       </select>
-      <select>
+      <select id="bGuests">
+        <option value="">Number of guests</option>
         <option>1 person</option>
         <option>2 people</option>
         <option>3 people</option>
         <option>4+ people</option>
       </select>
-      <button class="booking-submit" onclick="alert('Reservation confirmed! See you soon 🐾')">Confirm reservation</button>
+      <select id="bPref">
+        <option value="">Pet preference (optional)</option>
+        <option>No preference</option>
+        <option>Cats & Kittens area</option>
+        <option>Dogs & Puppies area</option>
+        <option>Bunnies area 🐰 New</option>
+        <option>Mixed area</option>
+      </select>
+      <div id="formError" class="form-error" style="display:none;"></div>
+      <button class="booking-submit" onclick="submitBooking()">Confirm reservation</button>
     </div>
   </section>
 
@@ -246,7 +353,49 @@
       <a href="#booking">Contact</a>
     </div>
     <p>Casablanca, Morocco · Open daily 9:00 AM – 8:00 PM</p>
+    <p class="footer-tagline">Cats · Dogs · Bunnies 🐰</p>
   </footer>
 
+  <script>
+    function toggleMenu() {
+      const links = document.getElementById('navLinks');
+      const btn = document.getElementById('hamburger');
+      links.classList.toggle('open');
+      btn.classList.toggle('active');
+    }
+
+    function submitBooking() {
+      const name = document.getElementById('bName').value.trim();
+      const email = document.getElementById('bEmail').value.trim();
+      const phone = document.getElementById('bPhone').value.trim();
+      const date = document.getElementById('bDate').value;
+      const time = document.getElementById('bTime').value;
+      const guests = document.getElementById('bGuests').value;
+      const errEl = document.getElementById('formError');
+
+      if (!name || !email || !phone || !date || !time || !guests) {
+        errEl.textContent = 'Please fill in all required fields.';
+        errEl.style.display = 'block';
+        return;
+      }
+      if (!email.includes('@') || !email.includes('.')) {
+        errEl.textContent = 'Please enter a valid email address.';
+        errEl.style.display = 'block';
+        return;
+      }
+
+      errEl.style.display = 'none';
+      alert('Reservation confirmed! See you soon 🐾\n\nWe\'ll send a confirmation to ' + email);
+    }
+
+    document.addEventListener('click', function(e) {
+      const links = document.getElementById('navLinks');
+      const btn = document.getElementById('hamburger');
+      if (links.classList.contains('open') && !links.contains(e.target) && !btn.contains(e.target)) {
+        links.classList.remove('open');
+        btn.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 </html>

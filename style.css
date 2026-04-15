@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: 'DM Sans', 'Segoe UI', Arial, sans-serif;
   color: #2c1a0e;
   background: #fff;
 }
@@ -24,6 +24,7 @@ body {
 }
 
 .nav-logo {
+  font-family: 'Playfair Display', serif;
   font-size: 20px;
   font-weight: 600;
   color: #b05a2e;
@@ -45,6 +46,12 @@ body {
   color: #b05a2e;
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .nav-cta {
   background: #e8876a;
   color: #fff;
@@ -54,10 +61,47 @@ body {
   font-size: 14px;
   cursor: pointer;
   transition: background 0.2s;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .nav-cta:hover {
   background: #d0704f;
+}
+
+/* ── HAMBURGER ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  width: 32px;
+  height: 32px;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #b05a2e;
+  border-radius: 2px;
+  transition: all 0.25s ease;
+  transform-origin: center;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* ── HERO ── */
@@ -82,7 +126,8 @@ body {
 }
 
 .hero h1 {
-  font-size: 48px;
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
   font-weight: 600;
   color: #7a3e1e;
   margin-bottom: 16px;
@@ -97,7 +142,7 @@ body {
 .hero p {
   font-size: 18px;
   color: #9a6a50;
-  max-width: 500px;
+  max-width: 520px;
   margin: 0 auto 32px;
   line-height: 1.7;
   position: relative;
@@ -120,6 +165,7 @@ body {
   font-size: 16px;
   cursor: pointer;
   transition: background 0.2s;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .btn-primary:hover {
@@ -135,6 +181,7 @@ body {
   font-size: 16px;
   cursor: pointer;
   transition: background 0.2s;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .btn-secondary:hover {
@@ -158,12 +205,31 @@ body {
   padding: 24px 28px;
   text-align: center;
   min-width: 130px;
+  position: relative;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .pet-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(180, 100, 60, 0.12);
+}
+
+.featured-pet {
+  border-color: #e8876a;
+  border-width: 2px;
+  background: #fff8f4;
+}
+
+.pet-new {
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  background: #e8876a;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
 }
 
 .pet-emoji {
@@ -191,7 +257,8 @@ body {
 }
 
 .section-title {
-  font-size: 32px;
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
   font-weight: 600;
   color: #7a3e1e;
   margin-bottom: 8px;
@@ -231,6 +298,11 @@ body {
   transform: translateY(-3px);
 }
 
+.new-item {
+  border-color: #e8876a;
+  background: #fff8f4;
+}
+
 .menu-item-icon {
   font-size: 32px;
   margin-bottom: 10px;
@@ -241,6 +313,19 @@ body {
   font-weight: 600;
   color: #5c3820;
   margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.item-badge {
+  background: #e8876a;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
 }
 
 .menu-item-desc {
@@ -300,7 +385,8 @@ body {
 }
 
 .gallery h2 {
-  font-size: 32px;
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
   font-weight: 600;
   color: #7a3e1e;
   margin-bottom: 8px;
@@ -316,22 +402,57 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
-  max-width: 720px;
+  max-width: 780px;
   margin: 0 auto;
+}
+
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 .gallery-box {
   border-radius: 16px;
   aspect-ratio: 1;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 48px;
+  overflow: hidden;
   transition: transform 0.2s;
 }
 
 .gallery-box:hover {
   transform: scale(1.04);
+}
+
+.gallery-placeholder {
+  font-size: 56px;
+  line-height: 1;
+}
+
+.gallery-name {
+  background: #fff;
+  border: 1px solid #f0d4c0;
+  border-radius: 20px;
+  padding: 6px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #7a3e1e;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.new-tag {
+  background: #e8876a;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 20px;
 }
 
 .gb1 { background: #fde0cc; }
@@ -340,6 +461,9 @@ body {
 .gb4 { background: #fde8d8; }
 .gb5 { background: #f8d0b8; }
 .gb6 { background: #fde0c8; }
+.gb7 { background: #f0e8ff; }
+.gb8 { background: #e8f0ff; }
+.gb9 { background: #e8fff0; }
 
 /* ── BOOKING ── */
 .booking {
@@ -349,7 +473,8 @@ body {
 }
 
 .booking h2 {
-  font-size: 32px;
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
   font-weight: 600;
   color: #7a3e1e;
   margin-bottom: 8px;
@@ -382,11 +507,23 @@ body {
   min-width: 150px;
   outline: none;
   transition: border-color 0.2s;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .booking-form input:focus,
 .booking-form select:focus {
   border-color: #e8876a;
+}
+
+.form-error {
+  width: 100%;
+  background: #fff0ed;
+  border: 1px solid #f0c4b4;
+  color: #b05a2e;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 14px;
+  text-align: left;
 }
 
 .booking-submit {
@@ -400,6 +537,7 @@ body {
   width: 100%;
   transition: background 0.2s;
   margin-top: 4px;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .booking-submit:hover {
@@ -416,6 +554,7 @@ body {
 }
 
 .footer-logo {
+  font-family: 'Playfair Display', serif;
   font-size: 20px;
   font-weight: 600;
   color: #f5c8a8;
@@ -445,10 +584,75 @@ body {
   color: #a07a60;
 }
 
+.footer-tagline {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #7a5a47;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 640px) {
-  .nav-links { display: none; }
-  .hero h1 { font-size: 32px; }
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-  .section { padding: 48px 20px; }
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 61px;
+    left: 0;
+    right: 0;
+    background: #fff8f4;
+    border-bottom: 1px solid #f0d4c0;
+    flex-direction: column;
+    padding: 16px 32px;
+    gap: 16px;
+    z-index: 99;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section {
+    padding: 48px 20px;
+  }
+
+  .section-title,
+  .gallery h2,
+  .booking h2 {
+    font-size: 28px;
+  }
+
+  .booking {
+    padding: 48px 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.gallery-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
 }
